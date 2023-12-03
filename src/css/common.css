@@ -36,7 +36,8 @@ img {
 .button:not([disabled]):focus {
   scale: 1.1;
 }
-.button:disabled {
+.button:disabled,
+#datetime-picker:disabled {
   cursor: not-allowed;
 }
 /* ---------------------- */

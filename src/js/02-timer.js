@@ -33,7 +33,6 @@ const dateOutput = document.querySelectorAll('.value');
 let selectedDate = '';
 let timerId = null;
 startButton.disabled = true;
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -41,21 +40,19 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     selectedDate = selectedDates[0];
-    if (new Date() > selectedDate) {
-      startButton.disabled = true;
-      Notify.failure('Please choose a date in the future');
-      //   Report.warning('Please choose a date in the future');
-      return;
-    }
+    if (new Date() > selectedDate)
+      return Notify.failure('Please choose a date in the future');
     startButton.disabled = false;
   },
 };
+
+flatpickr(dateTimeInput, options);
 
 startButton.addEventListener('click', () => {
   dateTimeInput.disabled = true;
   startButton.disabled = true;
   timerId = setInterval(() => {
-    dateObj = convertMs(selectedDate - new Date());
+    const dateObj = convertMs(selectedDate - new Date());
     Object.keys(dateObj).forEach((elem, index) => {
       dateOutput[index].textContent = addLeadingZero(dateObj[elem]);
       if (dateObj.seconds === 0) {
@@ -65,4 +62,3 @@ startButton.addEventListener('click', () => {
     });
   }, 1000);
 });
-flatpickr(dateTimeInput, options);
