@@ -52,13 +52,14 @@ startButton.addEventListener('click', () => {
   dateTimeInput.disabled = true;
   startButton.disabled = true;
   timerId = setInterval(() => {
-    const dateObj = convertMs(selectedDate - new Date());
+    const timeInterval = selectedDate - new Date();
+    if (timeInterval < 999) {
+      dateTimeInput.disabled = false;
+      clearInterval(timerId);
+    }
+    const dateObj = convertMs(timeInterval);
     Object.keys(dateObj).forEach((elem, index) => {
       dateOutput[index].textContent = addLeadingZero(dateObj[elem]);
-      if (dateObj.seconds === 0) {
-        dateTimeInput.disabled = false;
-        clearInterval(timerId);
-      }
     });
   }, 1000);
 });

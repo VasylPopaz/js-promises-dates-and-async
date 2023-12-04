@@ -14,15 +14,15 @@
     <form class="form">
       <label>
         First delay (ms)
-        <input type="number" name="delay" required />
+        <input type="number" name="delay" value="0" min="0" required />
       </label>
       <label>
         Delay step (ms)
-        <input type="number" name="step" required />
+        <input type="number" name="step" value="0" required />
       </label>
       <label>
         Amount
-        <input type="number" name="amount" required />
+        <input type="number" name="amount" value="0" min="1" required />
       </label>
       <button type="submit">Create promises</button>
     </form>
