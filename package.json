@@ -1,22 +1,14 @@
 {
-  "name": "parcel-project-template",
+  "name": "js-promises-dates-and-async",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://VasylPopaz.github.io/goit-js-hw-09",
+  "homepage": "https://VasylPopaz.github.io/js-promises-dates-and-async",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "build": "parcel build src/*.html --public-url /js-promises-dates-and-async/"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
-  },
   "dependencies": {
     "flatpickr": "^4.6.13",
     "modern-normalize": "^1.1.0",
